@@ -14,17 +14,20 @@ name: $(Build.DefinitionName)-$(date:yyyyMMdd)$(rev:.r)
 
 steps:
 - task: DotNetCoreCLI@2
+  displayName: Restore
   inputs:
     command: 'restore'
     projects: '**/*.csproj'
     feedsToUse: 'select'
 - task: DotNetCoreCLI@2
+  displayName: Build
   inputs:
     command: 'build'
     projects: '**/*.csproj'
 - task: DotNetCoreCLI@2
+  displayName: Pack
   inputs:
     command: 'pack'
     packagesToPack: '**/*.csproj'
     includesource: true
-    versioningScheme: 'byBuildNumber'
+    versioningScheme: byPrereleaseNumber
