@@ -6,5 +6,10 @@ namespace TestCodeAnalyserCore
     {
         //#region QQQ
         //#endregion
+
+        public string GetOk()
+        {
+            return " - Ok!!!";
+        }
     }
 }
