@@ -36,7 +36,7 @@ steps:
   inputs:
     command: 'custom'
     custom: 'pack'
-    arguments: '$(Build.SourcesDirectory)/../**/*.csproj --include-source -c=Release -p:NuspecFile=$(Build.SourcesDirectory)/**/*.nuspec'
+    arguments: '$(Build.SourcesDirectory)/**/*.csproj --include-source -c=Release -p:NuspecFile=$(Build.SourcesDirectory)/**/*.nuspec'
 - task: DotNetCoreCLI@2
   displayName: Push to Artifacts
   inputs:
