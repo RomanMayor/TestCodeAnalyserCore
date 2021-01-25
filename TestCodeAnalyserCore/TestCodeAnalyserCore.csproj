@@ -6,9 +6,9 @@
     <RestoreProjectStyle>PackageReference</RestoreProjectStyle>
   </PropertyGroup>
 
-  <ItemGroup>
+  <!--<ItemGroup>
     <None Remove="stylecop.ruleset" />
-  </ItemGroup>
+  </ItemGroup>-->
 
   <ItemGroup>
     <PackageReference Include="StyleCop.Analyzers" Version="1.1.118" GeneratePathProperty="true">
