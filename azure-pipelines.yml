@@ -4,8 +4,8 @@
 # Add steps that build, run tests, deploy, and more:
 # https://aka.ms/yaml
 
-trigger:
-- main
+#trigger:
+#- main
 
 pool:
   vmImage: 'ubuntu-latest'
@@ -25,19 +25,11 @@ steps:
     command: 'build'
     projects: '**/*.csproj'
 - task: DotNetCoreCLI@2
-  displayName: Pack
+  displayName: 'dotnet pack'
   inputs:
-    command: 'pack'
-    arguments: '-p:NuspecFile=$(Build.SourcesDirectory)/**/*.nuspec'
-    packagesToPack: '**/*.csproj'
-    includesource: true
-    versioningScheme: byPrereleaseNumber
-#- task: DotNetCoreCLI@2
-#  displayName: 'dotnet pack'
-#  inputs:
-#    command: 'custom'
-#    custom: 'pack'
-#    arguments: '$(Build.SourcesDirectory)/**/*.csproj --include-source -c=Release -p:NuspecFile=$(Build.SourcesDirectory)/**/*.nuspec'
+    command: 'custom'
+    custom: 'pack'
+    arguments: '$(Build.SourcesDirectory)/**/*.csproj --include-source -c=Release -p:NuspecFile=$(Build.SourcesDirectory)/**/*.nuspec'
 - task: DotNetCoreCLI@2
   displayName: Push to Artifacts
   inputs:
