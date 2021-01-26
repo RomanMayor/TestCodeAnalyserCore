@@ -19,12 +19,12 @@ steps:
     command: 'build'
     projects: '**/*.csproj'
 - task: DotNetCoreCLI@2
-  displayName: 'dotnet pack'
+  displayName: Pack
   inputs:
-    command: 'custom'
-    custom: 'pack'
-    arguments: '$(Build.SourcesDirectory)/**/*.csproj --include-source'
-#    arguments: '$(Build.SourcesDirectory)/**/*.csproj --include-source -c=Release -p:NuspecFile=$(Build.SourcesDirectory)/**/*.nuspec'
+    command: 'pack'
+    packagesToPack: '**/*.csproj'
+    includesource: true
+    versioningScheme: byPrereleaseNumber
 - task: DotNetCoreCLI@2
   displayName: Push to Artifacts
   inputs:
