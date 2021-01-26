@@ -22,7 +22,8 @@ steps:
   displayName: Pack
   inputs:
     command: 'pack'
-    packagesToPack: '**/*.csproj'
+    packagesToPack: '**/*.nuspec'
+    #packagesToPack: '**/*.csproj'
     includesource: true
     versioningScheme: byPrereleaseNumber
 - task: DotNetCoreCLI@2
