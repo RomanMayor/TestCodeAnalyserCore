@@ -4,7 +4,8 @@ trigger:
 pool:
   vmImage: 'ubuntu-latest'
 
-name: $(Build.DefinitionName)-$(date:yyyyMMdd)$(rev:.r)
+#name: $(Build.DefinitionName)-$(date:yyyyMMdd)$(rev:.r)
+name: $(BuildDefinitionName)_$(Year:yyyy).$(Month).$(DayOfMonth)$(Rev:.r)
 
 steps:
 - task: DotNetCoreCLI@2
@@ -24,7 +25,7 @@ steps:
     command: 'pack'
     packagesToPack: '**/*.nuspec'
     includesource: true
-    versioningScheme: byBuildNumber
+    versioningScheme: 
 - task: DotNetCoreCLI@2
   displayName: Push to Artifacts
   inputs:
