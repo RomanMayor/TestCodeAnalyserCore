@@ -15,5 +15,6 @@
   <files>
     <file src="stylecop.json" target="" />
     <file src="stylecop.ruleset" target="" />
+    <file src="stylecop.props" target="build" />
   </files>
 </package>
