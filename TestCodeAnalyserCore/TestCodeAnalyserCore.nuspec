@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2012/06/nuspec.xsd">
   <metadata>
     <id>TestCodeAnalyserCore</id>
-    <version>1.0.2</version>
+    <version>1.0.3</version>
     <authors>TestCodeAnalyserCore</authors>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <description>Package Description</description>
@@ -15,6 +15,7 @@
   <files>
     <file src="stylecop.json" target="" />
     <file src="stylecop.ruleset" target="" />
-    <file src="stylecop.props" target="build" />
+    <file src="TestCodeAnalyserCore.props" target="build" />
+    <file src="TestCodeAnalyserCore.targets" target="build" />
   </files>
 </package>
